@@ -1,0 +1,168 @@
+Script started on Thu 06 Feb 2020 05:13:53 AM EST
+]0;centoslive@livecd:~[?1034h[centoslive@livecd ~]$ man gcc
+[?1049h[?1h=GCC(1)                                GNU                               GCC(1)
+
+[1mNAME[0m
+       gcc - GNU project C and C++ compiler
+
+[1mSYNOPSIS[0m
+       gcc [[1m-c[0m|[1m-S[0m|[1m-E[0m] [[1m-std=[0m[4mstandard[24m]
+           [[1m-g[0m] [[1m-pg[0m] [[1m-O[0m[4mlevel[24m]
+           [[1m-W[0m[4mwarn[24m...] [[1m-pedantic[0m]
+           [[1m-I[0m[4mdir[24m...] [[1m-L[0m[4mdir[24m...]
+           [[1m-D[0m[4mmacro[24m[=[4mdefn[24m]...] [[1m-U[0m[4mmacro[24m]
+           [[1m-f[0m[4moption[24m...] [[1m-m[0m[4mmachine-option[24m...]
+           [[1m-o[0m [4moutfile[24m] [@[4mfile[24m] [4minfile[24m...
+
+       Only the most useful options are listed here; see below for the
+       remainder.  [1mg++[0m accepts mostly the same options as [1mgcc[0m.
+
+[1mDESCRIPTION[0m
+       When you invoke GCC, it normally does preprocessing, compilation,
+       assembly and linking.  The "overall options" allow you to stop this
+       process at an intermediate stage.  For example, the [1m-c[0m option says not
+       to run the linker.  Then the output consists of object files output by
+       the assembler.
+:[K[K[?1l>[?1049l]0;centoslive@livecd:~[centoslive@livecd ~]$ cd Documents/
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ pwd
+/home/centoslive/Documents
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ vim testfie[Kle.txt
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H"testfile.txt" [New File][>c[2;1H[1m[34m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H0,0-1[9CAll[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[24;1H[K[24;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l"testfile.txt" [New] 0L, 0C written
+[?1l>[?12l[?25h[?1049l]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ ls
+testfile.txt
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ mkdir test
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ cp testfile.txt test
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ mv testfile.txt test
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ rm test/testfile.txt 
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ rmdir test/
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ vim testfile,[K.txt
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H[1;24r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[24;1H"testfile.txt" [New File][>c[2;1H[1m[34m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H0,0-1[9CAll[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[24;1H[K[24;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l"testfile.txt" [New] 0L, 0C written
+[?1l>[?12l[?25h[?1049l]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ chmod +=[K[K+x testfile.txt 
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ clear
+[H[2J]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ top
+[H[2J(B[mtop - 05:17:30 up 15 min,  3 users,  load average: 0.00, 0.04, 0.02(B[m[39;49m[K
+Tasks:(B[m[39;49m(B[m 134 (B[m[39;49mtotal,(B[m[39;49m(B[m   1 (B[m[39;49mrunning,(B[m[39;49m(B[m 133 (B[m[39;49msleeping,(B[m[39;49m(B[m   0 (B[m[39;49mstopped,(B[m[39;49m(B[m   0 (B[m[39;49mzombie(B[m[39;49m[K
+Cpu(s):(B[m[39;49m(B[m  5.9%(B[m[39;49mus,(B[m[39;49m(B[m  1.8%(B[m[39;49msy,(B[m[39;49m(B[m  0.0%(B[m[39;49mni,(B[m[39;49m(B[m 91.9%(B[m[39;49mid,(B[m[39;49m(B[m  0.1%(B[m[39;49mwa,(B[m[39;49m(B[m  0.2%(B[m[39;49mhi,(B[m[39;49m(B[m  0.1%(B[m[39;49msi,(B[m[39;49m(B[m  0.0%(B[m[39;49mst(B[m[39;49m[K
+Mem: (B[m[39;49m(B[m  1030580k (B[m[39;49mtotal,(B[m[39;49m(B[m  1014976k (B[m[39;49mused,(B[m[39;49m(B[m    15604k (B[m[39;49mfree,(B[m[39;49m(B[m    37892k (B[m[39;49mbuffers(B[m[39;49m[K
+Swap:(B[m[39;49m(B[m        0k (B[m[39;49mtotal,(B[m[39;49m(B[m        0k (B[m[39;49mused,(B[m[39;49m(B[m        0k (B[m[39;49mfree,(B[m[39;49m(B[m   761504k (B[m[39;49mcached(B[m[39;49m[K
+[6;1H
+[7m  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            (B[m[39;49m[K
+(B[m    1 root      20   0  2900  992  772 S  0.0  0.1   0:00.63 init               (B[m[39;49m
+(B[m    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd           (B[m[39;49m
+(B[m    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0        (B[m[39;49m
+(B[m    4 root      20   0     0    0    0 S  0.0  0.0   0:00.02 ksoftirqd/0        (B[m[39;49m
+(B[m    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0        (B[m[39;49m
+(B[m    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 watchdog/0         (B[m[39;49m
+(B[m    7 root      20   0     0    0    0 S  0.0  0.0   0:00.38 events/0           (B[m[39;49m
+(B[m    8 root      20   0     0    0    0 S  0.0  0.0   0:00.00 cgroup             (B[m[39;49m
+(B[m    9 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khelper            (B[m[39;49m
+(B[m   10 root      20   0     0    0    0 S  0.0  0.0   0:00.00 netns              (B[m[39;49m
+(B[m   11 root      20   0     0    0    0 S  0.0  0.0   0:00.00 async/mgr          (B[m[39;49m
+(B[m   12 root      20   0     0    0    0 S  0.0  0.0   0:00.00 pm                 (B[m[39;49m
+(B[m   13 root      20   0     0    0    0 S  0.0  0.0   0:00.00 sync_supers        (B[m[39;49m
+(B[m   14 root      20   0     0    0    0 S  0.0  0.0   0:00.00 bdi-default        (B[m[39;49m
+(B[m   15 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kintegrityd/0      (B[m[39;49m
+(B[m   16 root      20   0     0    0    0 S  0.0  0.0   0:00.05 kblockd/0          (B[m[39;49m
+(B[m   17 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kacpid             (B[m[39;49m[6;1H[K[H(B[mtop - 05:17:30 up 15 min,  3 users,  load average: 0.00, 0.04, 0.02(B[m[39;49m[K
+Tasks:(B[m[39;49m(B[m 134 (B[m[39;49mtotal,(B[m[39;49m(B[m   1 (B[m[39;49mrunning,(B[m[39;49m(B[m 133 (B[m[39;49msleeping,(B[m[39;49m(B[m   0 (B[m[39;49mstopped,(B[m[39;49m(B[m   0 (B[m[39;49mzombie(B[m[39;49m[K
+Cpu(s):(B[m[39;49m(B[m  7.7%(B[m[39;49mus,(B[m[39;49m(B[m  7.7%(B[m[39;49msy,(B[m[39;49m(B[m  0.0%(B[m[39;49mni,(B[m[39;49m(B[m 84.6%(B[m[39;49mid,(B[m[39;49m(B[m  0.0%(B[m[39;49mwa,(B[m[39;49m(B[m  0.0%(B[m[39;49mhi,(B[m[39;49m(B[m  0.0%(B[m[39;49msi,(B[m[39;49m(B[m  0.0%(B[m[39;49mst(B[m[39;49m[K
+Mem: (B[m[39;49m(B[m  1030580k (B[m[39;49mtotal,(B[m[39;49m(B[m  1015472k (B[m[39;49mused,(B[m[39;49m(B[m    15108k (B[m[39;49mfree,(B[m[39;49m(B[m    37892k (B[m[39;49mbuffers(B[m[39;49m[K
+Swap:(B[m[39;49m(B[m        0k (B[m[39;49mtotal,(B[m[39;49m(B[m        0k (B[m[39;49mused,(B[m[39;49m(B[m        0k (B[m[39;49mfree,(B[m[39;49m(B[m   761504k (B[m[39;49mcached(B[m[39;49m[K
+[6;1H
+[7m  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            (B[m[39;49m[K
+(B[m 1196 root      20   0 78048  25m 5328 S  7.7  2.5   0:05.48 Xorg               (B[m[39;49m
+(B[m    1 root      20   0  2900  992  772 S  0.0  0.1   0:00.63 init               (B[m[39;49m
+(B[m    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd           (B[m[39;49m
+(B[m    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0        (B[m[39;49m
+(B[m    4 root      20   0     0    0    0 S  0.0  0.0   0:00.02 ksoftirqd/0        (B[m[39;49m
+(B[m    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0        (B[m[39;49m
+(B[m    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 watchdog/0         (B[m[39;49m
+(B[m    7 root      20   0     0    0    0 S  0.0  0.0   0:00.38 events/0           (B[m[39;49m
+(B[m    8 root      20   0     0    0    0 S  0.0  0.0   0:00.00 cgroup             (B[m[39;49m
+(B[m    9 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khelper            (B[m[39;49m
+(B[m   10 root      20   0     0    0    0 S  0.0  0.0   0:00.00 netns              (B[m[39;49m
+(B[m   11 root      20   0     0    0    0 S  0.0  0.0   0:00.00 async/mgr          (B[m[39;49m
+(B[m   12 root      20   0     0    0    0 S  0.0  0.0   0:00.00 pm                 (B[m[39;49m
+(B[m   13 root      20   0     0    0    0 S  0.0  0.0   0:00.00 sync_supers        (B[m[39;49m
+(B[m   14 root      20   0     0    0    0 S  0.0  0.0   0:00.00 bdi-default        (B[m[39;49m
+(B[m   15 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kintegrityd/0      (B[m[39;49m
+(B[m   16 root      20   0     0    0    0 S  0.0  0.0   0:00.05 kblockd/0          (B[m[39;49m[6;1H[K[H[2J[?12;25h(B[mHelp for Interactive Commands(B[m[39;49m(B[m - procps version 3.2.8(B[m[39;49m[K
+(B[mWindow (B[m[39;49m[7m1:Def(B[m[39;49m(B[m: (B[m[39;49mCumulative mode (B[m[39;49m(B[mOff(B[m[39;49m(B[m.  (B[m[39;49m[7mSystem(B[m[39;49m(B[m: (B[m[39;49mDelay (B[m[39;49m(B[m3.0 secs(B[m[39;49m(B[m; (B[m[39;49mSecure mode (B[m[39;49m(B[mOff(B[m[39;49m(B[m.(B[m[39;49m[K
+[K
+(B[m  Z(B[m[39;49m(B[m,(B[m[39;49m(B[mB(B[m[39;49m(B[m       Global: '(B[m[39;49m(B[mZ(B[m[39;49m(B[m' change color mappings; '(B[m[39;49m(B[mB(B[m[39;49m(B[m' disable/enable bold(B[m[39;49m[K
+(B[m  l,t,m     Toggle Summaries: '(B[m[39;49m(B[ml(B[m[39;49m(B[m' load avg; '(B[m[39;49m(B[mt(B[m[39;49m(B[m' task/cpu stats; '(B[m[39;49m(B[mm(B[m[39;49m(B[m' mem info(B[m[39;49m[K
+(B[m  1,I       Toggle SMP view: '(B[m[39;49m(B[m1(B[m[39;49m(B[m' single/separate states; '(B[m[39;49m(B[mI(B[m[39;49m(B[m' Irix/Solaris mode(B[m[39;49m[K
+[K
+(B[m  f,o     . Fields/Columns: '(B[m[39;49m(B[mf(B[m[39;49m(B[m' add or remove; '(B[m[39;49m(B[mo(B[m[39;49m(B[m' change display order(B[m[39;49m[K
+(B[m  F or O  . Select sort field(B[m[39;49m[K
+(B[m  <,>     . Move sort field: '(B[m[39;49m(B[m<(B[m[39;49m(B[m' next col left; '(B[m[39;49m(B[m>(B[m[39;49m(B[m' next col right(B[m[39;49m[K
+(B[m  R,H     . Toggle: '(B[m[39;49m(B[mR(B[m[39;49m(B[m' normal/reverse sort; '(B[m[39;49m(B[mH(B[m[39;49m(B[m' show threads(B[m[39;49m[K
+(B[m  c,i,S   . Toggle: '(B[m[39;49m(B[mc(B[m[39;49m(B[m' cmd name/line; '(B[m[39;49m(B[mi(B[m[39;49m(B[m' idle tasks; '(B[m[39;49m(B[mS(B[m[39;49m(B[m' cumulative time(B[m[39;49m[K
+(B[m  x(B[m[39;49m(B[m,(B[m[39;49m(B[my(B[m[39;49m(B[m     . Toggle highlights: '(B[m[39;49m(B[mx(B[m[39;49m(B[m' sort field; '(B[m[39;49m(B[my(B[m[39;49m(B[m' running tasks(B[m[39;49m[K
+(B[m  z(B[m[39;49m(B[m,(B[m[39;49m(B[mb(B[m[39;49m(B[m     . Toggle: '(B[m[39;49m(B[mz(B[m[39;49m(B[m' color/mono; '(B[m[39;49m(B[mb(B[m[39;49m(B[m' bold/reverse (only if 'x' or 'y')(B[m[39;49m[K
+(B[m  u       . Show specific user only(B[m[39;49m[K
+(B[m  n or #  . Set maximum tasks displayed(B[m[39;49m[K
+[K
+(B[m  k,r       Manipulate tasks: '(B[m[39;49m(B[mk(B[m[39;49m(B[m' kill; '(B[m[39;49m(B[mr(B[m[39;49m(B[m' renice(B[m[39;49m[K
+(B[m  d or s    Set update interval(B[m[39;49m[K
+(B[m  W         Write configuration file(B[m[39;49m[K
+(B[m  q         Quit(B[m[39;49m[K
+(B[m          ( commands shown with '.' require a (B[m[39;49m(B[mvisible(B[m[39;49m(B[m task display (B[m[39;49m(B[mwindow(B[m[39;49m(B[m ) (B[m[39;49m[K
+(B[mPress '(B[m[39;49m(B[mh(B[m[39;49m(B[m' or '(B[m[39;49m(B[m?(B[m[39;49m(B[m' for help with (B[m[39;49m(B[mWindows(B[m[39;49m(B[m,(B[m[39;49m[K
+any other key to continue [?12l[?25h[H(B[mtop - 05:17:31 up 15 min,  3 users,  load average: 0.00, 0.04, 0.02(B[m[39;49m[K
+Tasks:(B[m[39;49m(B[m 134 (B[m[39;49mtotal,(B[m[39;49m(B[m   1 (B[m[39;49mrunning,(B[m[39;49m(B[m 133 (B[m[39;49msleeping,(B[m[39;49m(B[m   0 (B[m[39;49mstopped,(B[m[39;49m(B[m   0 (B[m[39;49mzombie(B[m[39;49m[K
+Cpu(s):(B[m[39;49m(B[m  5.9%(B[m[39;49mus,(B[m[39;49m(B[m  0.0%(B[m[39;49msy,(B[m[39;49m(B[m  0.0%(B[m[39;49mni,(B[m[39;49m(B[m 94.1%(B[m[39;49mid,(B[m[39;49m(B[m  0.0%(B[m[39;49mwa,(B[m[39;49m(B[m  0.0%(B[m[39;49mhi,(B[m[39;49m(B[m  0.0%(B[m[39;49msi,(B[m[39;49m(B[m  0.0%(B[m[39;49mst(B[m[39;49m[K
+Mem: (B[m[39;49m(B[m  1030580k (B[m[39;49mtotal,(B[m[39;49m(B[m  1015596k (B[m[39;49mused,(B[m[39;49m(B[m    14984k (B[m[39;49mfree,(B[m[39;49m(B[m    37892k (B[m[39;49mbuffers(B[m[39;49m[K
+Swap:(B[m[39;49m(B[m        0k (B[m[39;49mtotal,(B[m[39;49m(B[m        0k (B[m[39;49mused,(B[m[39;49m(B[m        0k (B[m[39;49mfree,(B[m[39;49m(B[m   761544k (B[m[39;49mcached(B[m[39;49m[K
+[6;1H
+[7m  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            (B[m[39;49m[K
+(B[m 1196 root      20   0 78048  25m 5328 S  2.8  2.5   0:05.49 Xorg               (B[m[39;49m
+(B[m 1634 centosli  20   0 46976 7768 5268 S  2.8  0.8   0:01.08 gnome-terminal     (B[m[39;49m
+(B[m(B[m 1868 centosli  20   0  2704 1152  888 R  2.8  0.1   0:00.04 top                (B[m[39;49m
+(B[m    1 root      20   0  2900  992  772 S  0.0  0.1   0:00.63 init               (B[m[39;49m
+(B[m    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd           (B[m[39;49m
+(B[m    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0        (B[m[39;49m
+(B[m    4 root      20   0     0    0    0 S  0.0  0.0   0:00.02 ksoftirqd/0        (B[m[39;49m
+(B[m    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0        (B[m[39;49m
+(B[m    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 watchdog/0         (B[m[39;49m
+(B[m    7 root      20   0     0    0    0 S  0.0  0.0   0:00.38 events/0           (B[m[39;49m
+(B[m    8 root      20   0     0    0    0 S  0.0  0.0   0:00.00 cgroup             (B[m[39;49m
+(B[m    9 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khelper            (B[m[39;49m
+(B[m   10 root      20   0     0    0    0 S  0.0  0.0   0:00.00 netns              (B[m[39;49m
+(B[m   11 root      20   0     0    0    0 S  0.0  0.0   0:00.00 async/mgr          (B[m[39;49m
+(B[m   12 root      20   0     0    0    0 S  0.0  0.0   0:00.00 pm                 (B[m[39;49m
+(B[m   13 root      20   0     0    0    0 S  0.0  0.0   0:00.00 sync_supers        (B[m[39;49m
+(B[m   14 root      20   0     0    0    0 S  0.0  0.0   0:00.00 bdi-default        (B[m[39;49m[6;1H[K[H(B[mtop - 05:17:31 up 15 min,  3 users,  load average: 0.00, 0.04, 0.02(B[m[39;49m[K
+Tasks:(B[m[39;49m(B[m 134 (B[m[39;49mtotal,(B[m[39;49m(B[m   1 (B[m[39;49mrunning,(B[m[39;49m(B[m 133 (B[m[39;49msleeping,(B[m[39;49m(B[m   0 (B[m[39;49mstopped,(B[m[39;49m(B[m   0 (B[m[39;49mzombie(B[m[39;49m[K
+Cpu(s):(B[m[39;49m(B[m  2.9%(B[m[39;49mus,(B[m[39;49m(B[m  0.0%(B[m[39;49msy,(B[m[39;49m(B[m  0.0%(B[m[39;49mni,(B[m[39;49m(B[m 97.1%(B[m[39;49mid,(B[m[39;49m(B[m  0.0%(B[m[39;49mwa,(B[m[39;49m(B[m  0.0%(B[m[39;49mhi,(B[m[39;49m(B[m  0.0%(B[m[39;49msi,(B[m[39;49m(B[m  0.0%(B[m[39;49mst(B[m[39;49m[K
+Mem: (B[m[39;49m(B[m  1030580k (B[m[39;49mtotal,(B[m[39;49m(B[m  1015596k (B[m[39;49mused,(B[m[39;49m(B[m    14984k (B[m[39;49mfree,(B[m[39;49m(B[m    37892k (B[m[39;49mbuffers(B[m[39;49m[K
+Swap:(B[m[39;49m(B[m        0k (B[m[39;49mtotal,(B[m[39;49m(B[m        0k (B[m[39;49mused,(B[m[39;49m(B[m        0k (B[m[39;49mfree,(B[m[39;49m(B[m   761544k (B[m[39;49mcached(B[m[39;49m[K
+[6;1H
+[7m  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            (B[m[39;49m[K
+(B[m 1196 root      20   0 78048  25m 5328 S  2.8  2.5   0:05.50 Xorg               (B[m[39;49m
+(B[m    1 root      20   0  2900  992  772 S  0.0  0.1   0:00.63 init               (B[m[39;49m
+(B[m    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd           (B[m[39;49m
+(B[m    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0        (B[m[39;49m
+(B[m    4 root      20   0     0    0    0 S  0.0  0.0   0:00.02 ksoftirqd/0        (B[m[39;49m
+(B[m    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0        (B[m[39;49m
+(B[m    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 watchdog/0         (B[m[39;49m
+(B[m    7 root      20   0     0    0    0 S  0.0  0.0   0:00.38 events/0           (B[m[39;49m
+(B[m    8 root      20   0     0    0    0 S  0.0  0.0   0:00.00 cgroup             (B[m[39;49m
+(B[m    9 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khelper            (B[m[39;49m
+(B[m   10 root      20   0     0    0    0 S  0.0  0.0   0:00.00 netns              (B[m[39;49m
+(B[m   11 root      20   0     0    0    0 S  0.0  0.0   0:00.00 async/mgr          (B[m[39;49m
+(B[m   12 root      20   0     0    0    0 S  0.0  0.0   0:00.00 pm                 (B[m[39;49m
+(B[m   13 root      20   0     0    0    0 S  0.0  0.0   0:00.00 sync_supers        (B[m[39;49m
+(B[m   14 root      20   0     0    0    0 S  0.0  0.0   0:00.00 bdi-default        (B[m[39;49m
+(B[m   15 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kintegrityd/0      (B[m[39;49m
+(B[m   16 root      20   0     0    0    0 S  0.0  0.0   0:00.05 kblockd/0          (B[m[39;49m[6;1H[K[25;1H[?12l[?25h
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ who
+centoslive tty1         2020-02-06 05:02 (:0)
+centoslive pts/0        2020-02-06 05:07 (:0.0)
+centoslive pts/1        2020-02-06 05:13
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ nproc
+1
+]0;centoslive@livecd:~/Documents[centoslive@livecd Documents]$ exit
+exit
+
+Script done on Thu 06 Feb 2020 05:17:51 AM EST
